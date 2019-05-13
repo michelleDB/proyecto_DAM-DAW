@@ -69,3 +69,11 @@ and open the template in the editor.
     background-image: url(../imagenes/newsletter/taller.png);
     
 }
+
+#menu-principal .nav-link {
+    display: block;
+    padding: .5rem 0.9rem;
+}
+#menu-principal p {
+    font-size: 12px;
+}

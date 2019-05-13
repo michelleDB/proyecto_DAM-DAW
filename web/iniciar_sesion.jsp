@@ -13,17 +13,19 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
         <title>JSP Page</title>
     </head>
     <body>
         
         <!-- Header -->
-        <%@ include file="includes/header.html" %>
+        <%@ include file="includes/header.jsp" %>
         <% if (getServletContext().getAttribute("cuenta_creada") == "valida") { %>
         <div class="alert alert-primary" role="alert">
             Cuenta creada!
         </div>
         <%}%>
+      
 
 
         <!-- Contenido Iniciar Sesión -->
@@ -48,6 +50,6 @@
         <!-- Fin Contenido Iniciar Sesión -->
 
         <!-- Footer -->
-        <%@ include file="includes/footer.html" %>
+        <%@ include file="includes/footer.jsp" %>
     </body>
 </html>

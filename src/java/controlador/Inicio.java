@@ -35,7 +35,7 @@ public class Inicio extends HttpServlet {
         String nextPage = "";
         String pagina = request.getParameter("pagina");
         if (pagina == null) {
-            // Primer acceso - redirección a order.jsp
+            // Primer acceso 
             nextPage = "/index.jsp";
         } else if (pagina.equals("inciar_sesion")) {
             nextPage = "/iniciar_sesion.jsp";

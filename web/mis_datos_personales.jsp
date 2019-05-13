@@ -13,11 +13,12 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
         <title>JSP Page</title>
     </head>
     <body>
          <!-- Header -->
-        <%@ include file="includes/header.html" %>
+        <%@ include file="includes/header.jsp" %>
         
         <div class="container">
             <h1>Mis datos personales</h1>
@@ -39,15 +40,31 @@
             </div>
             <div class="row">
                 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                    <label>Nombre</label>
+                    <label>Segundo apellido</label>
                 </div>
                 <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
-                    <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                    <input type="text" name="apellido2" class="form-control" placeholder="Segundo apellido">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <label>Email</label>
+                </div>
+                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                    <input type="text" name="email" class="form-control" placeholder="Email">
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <label>Contraseña</label>
+                </div>
+                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                    <input type="password" name="password" class="form-control" placeholder="Contraseña">
                 </div>
             </div>
         </div>
         
         <!-- Footer -->
-        <%@ include file="includes/footer.html" %>
+        <%@ include file="includes/footer.jsp" %>
     </body>
 </html>

@@ -1,22 +1,24 @@
+<%-- 
+    Document   : header
+    Created on : 10-may-2019, 12:06:52
+    Author     : Fresita
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <!-- Barra superior -->
+          <!-- Barra superior -->
         <div id="barra-superior" class="container-fluid text-center  header-top">
             <p class="pt-1 pb-1 small">Gastos de envio GRATIS a partir de 40€</p>
         </div>
@@ -24,7 +26,7 @@ and open the template in the editor.
 
         <!-- Logo -->
         <div id="logo-superior" class="container-fluid text-center pt-1 pb-1">
-            <img src="imagenes/header/logo-gris-rosa.png" class="img-responsive img-fluid center-block"></img>
+            <img src="imagenes/header/logo-gris-rosa.png" class="img-responsive img-fluid center-block"/>
         </div>
         <!-- Fin Logo -->
 
@@ -58,13 +60,7 @@ and open the template in the editor.
             </ul>
             <ul id="iconos-menu" class="nav justify-content-end mr-6">
                 <li class="nav-item">
-                    <a class="nav-link" href="panel_control_usuario.jsp"><img src="imagenes/header/usuario2.png"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="iniciar_sesion.jsp"><h6>Cerrar sesión</h6></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="iniciar_sesion.jsp"><h6>Cerrar sesión</h6></a>
+                    <a class="nav-link" href="iniciar_sesion.jsp"><img src="imagenes/header/usuario2.png"></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><img src="imagenes/header/carrito2.png"></a>

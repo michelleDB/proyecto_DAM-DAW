@@ -5,29 +5,50 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="javax.servlet.http.HttpServletRequest;" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
         <title>Inicio</title>
     </head>
     <body>
 
         <!-- Header -->
         <%-- <%@ include file="includes/header.html" %> --%>
-        <%
-            
-            HttpSession sesion = request.getSession();
-            if (sesion.getAttribute("sesion_usuario") == null) {%>
-                <%@ include file="includes/header.html" %>
-          <%} else { %>
-                <%@ include file="includes/header_sesion_iniciada.html" %>
-          <%}%>
+        <%HttpSession sesion = request.getSession();
+
+            System.out.println("___________________________________________");
+            System.out.println("guardo en varibale pagina inicio");
+            request.setAttribute("pagina2", "inicio");
+            System.out.println(request.getParameter("pagina2"));
+            System.out.println(sesion.getAttribute("sesion_usuario"));
+            System.out.println(request.getParameter("pagina"));%>
+
+        <!-- Comprobar si el usuario ha iniciado sesión o no -->
+        <%   if (sesion.getAttribute("sesion_usuario") == null) {
+                System.out.println("no hay sesion"); %>
+        <%@     include file="includes/header.jsp" %>
+        <%  } else if (sesion.getAttribute("sesion_usuario") != null) {
+            System.out.println("viene de iniciar sesion");
+            if ((request.getParameter("pagina") != null) && (request.getParameter("pagina").equals("iniciar_sesion"))) {
+                System.out.println("viene de iniciar sesion");%>
+        <%@         include file="includes/header_sesion_iniciada.jsp" %>
+        <%      } else if ((request.getParameter("pagina") != null) && (request.getParameter("pagina").equals("inicio"))) {
+            System.out.println("viene de sesion guardada");%>
+        <%@         include file="includes/header_sesion_iniciada.jsp" %>
+        <%      } else if (request.getParameter("pagina") == null) {
+            System.out.println("viene de cerrar sesion");
+            sesion.invalidate();%>
+        <%@         include file="includes/header.jsp" %>
+        <%}
+            }%> 
+
 
         <!-- Contenido Inicio -->
         <!-- Slide -->
@@ -158,11 +179,11 @@
         <div class="container-fluid  mt-5 mb-5">
             <div class="row">
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 bg-light pt-5 pb-5">
-                    <form>
+                    <form action="newsletter" method="POST">
                         <input type="hidden" name="pagina" value="newsletter">
                         <div class="row ">
                             <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 ">
-                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Introduzca su email">
+                                <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Introduzca su email">
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                 <button type="submit" class="btn btn-primary">Suscribírse</button>
@@ -179,6 +200,6 @@
         <!-- Fin Inicio -->
 
         <!-- Footer -->
-        <%@ include file="includes/footer.html" %>
+        <%@ include file="includes/footer.jsp" %>
     </body>
 </html>
